@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Fu1cr4m&#39;s Blog</title>
+    <title>机器学习之异常检测--基于统计学方法 · Fu1cr4m&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 <meta name="generator" content="Hexo 4.2.0"></head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Fu1cr4m&#39;s Blog</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">机器学习之异常检测--基于统计学方法</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Fu1cr4m's Blog</a>
 </header>
@@ -220,24 +231,76 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            机器学习之异常检测--基于统计学方法
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "机器学习">机器学习</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "异常检测">异常检测</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.6k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2021/05/13</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,83 +401,61 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/05/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B-%E5%9F%BA%E4%BA%8E%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%96%B9%E6%B3%95/" >
-            
-                <span>机器学习之异常检测--基于统计学方法</span>
-        </a>
-        <div class="abstract-content">
-            作者：Fu1cr4m说明：本文内容来自学习感悟以及网络整理，如有错误还请各位朋友批评指正！邮箱：Fu1cr4m@gmail.com
+            <main class="main post-page">
+    <article class="article-entry">
+        <blockquote><p>作者：Fu1cr4m<br>说明：本文内容来自学习感悟以及网络整理，如有错误还请各位朋友批评指正！<br>邮箱：<a href="mailto:Fu1cr4m@gmail.com">Fu1cr4m@gmail.com</a></p>
+</blockquote>
 
+<h1 id="基于统计学方法"><a href="#基于统计学方法" class="headerlink" title="基于统计学方法"></a>基于统计学方法</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>最早的基于统计学的异常检测，是由Barnett等人提出，他们基于数据服从某种分布（如正态分布、泊松分布及二项式分布）或概率模型，通过判断某个数据点是否符合预设分布/模型，即小概率事件的判别，来实现对异常的检测。<br>基于该方法的异常检测是通过训练数据的标签来预设正常数据符合的概率分布或模型，将概率低的区域视为异常离群值。<br>根据概率模型可分为：   </p>
+<ol>
+<li>参数方法<br>由已知分布的数据来估计模型参数，如高斯模型，其中最简单的参数异常模型就是假设样本服从一元正态分布，当数据点大于均差值两倍或者三倍方法时，标记为异常。   </li>
+<li>非参数方法<br>在未知数据分布下，可通过绘制直方图，通过检测数据是否在训练集所产生的直方图中来进行异常检测，还可利用数据的变异程度，如均差、标准差、变异系数、四分位数间距等，发现数据中的异常点。<br>该方法既能表示数据包含的信息特征，又可以根据预设分布/模型快速准确地找出异常数据，适用于但便利的数据集。但针对这类方法所检测出的离群点的解释较为困难，并且由于数据分布、概率模型及参数难以确定，也制约了该方法的使用。此外，随着数据维度和数据量的增加，该方法异常检测效率也会随之变低。</li>
+</ol>
+<h2 id="基于高斯分布的异常检测方法"><a href="#基于高斯分布的异常检测方法" class="headerlink" title="基于高斯分布的异常检测方法"></a>基于高斯分布的异常检测方法</h2><p>高斯分布其实就是我们平常说的正态分布，变量x符合高斯分布x~N（μ，σ²）则其概率密度函数为：<br><img src="https://www.hualigs.cn/image/609e55c586601.jpg" alt=""><br>我们通常利用已有的数据来预测正态分布总体中的μ和σ²的计算公式如下：<br><img src="https://www.hualigs.cn/image/609e56708fc87.jpg" alt=""><br><img src="https://www.hualigs.cn/image/609e56709080d.jpg" alt=""><br>以μ=2，σ²=4为例，图像如下图：<br><img src="https://www.hualigs.cn/image/609e57af1270e.jpg" alt=""><br>在带入计算后，如果概率值低于阈值，就可将该点记录为异常点。在正态分布中，会参照相应原则，如：<br>sigma原则：数值分布在（μ-σ，μ+σ）中的概率为0.6526；<br>2sigma原则：数值分布在（μ-2σ，μ+2σ）中的概率为0.9544；<br>3sigma原则：数值分布在（μ-3σ，μ+3σ）中的概率为0.9974；<br>其中在正态分布中σ代表标准差，μ代表均值x=μ即为图像的对称轴。<br>由于“小概率事件”和假设检验的基本思想 “小概率事件”通常指发生的概率小于5%的事件，认为在一次试验中该事件是几乎不可能发生的。<br>由此可见X落在（μ-3σ，μ+3σ）以外的概率小于千分之三，在实际问题中常认为相应的事件是不会发生的，基本上可以把区间（μ-3σ,μ+3σ）看作是随机变量X实际可能的取值区间，这称之为正态分布的“3σ”原则。<br><img src="https://www.hualigs.cn/image/609e591b6d47e.jpg" alt=""><br>在基于高斯分布的异常检测方法中，分为一元异常点检测，是仅涉及一个属性或者变量的检测；多元异常点检测，是涉及两个或多个属性和变量的检测，需要求出对应维度的均值和标准差，如果各个维度的特征之间是相互独立的，那么采用以下公式来计算：<br><img src="https://www.hualigs.cn/image/609e5b717d0de.jpg" alt=""><br>如果特征之间存在相关性，则需要利用多元高斯分布来进行计算。<br>在一般的高斯分布模型中，我们计算P(x)的方法是： 通过分别计算每个特征对应的几率然后将其累乘起来，在多元高斯分布模型中，我们将构建特征的协方差矩阵，用所有的特征一起来计算P(x)。<br>首先需要计算所有特征的平均值，然后再计算协方差矩阵：<br><img src="https://www.hualigs.cn/image/609e5ce1803f1.jpg" alt=""><br>注:这里的μ是一个向量，对于每一个单元都是原特征矩阵中一行数据的均值。最后算出多元高斯分布的P(x):<br><img src="https://www.hualigs.cn/image/609e5d43bfed5.jpg" alt=""><br>PS：|Σ|是定矩阵，在 Octave 中用 det(sigma)计算<br>使用比较广泛的是一般高斯模型，如果特征之间在某种程度上存在相互关联的情况，我们可以通过构造新特征的方法来捕捉这些相关性。如果训练集不是太大，并且没有太多的特征，我们可以使用多元高斯分布模型。</p>
+<h2 id="HBOS算法"><a href="#HBOS算法" class="headerlink" title="HBOS算法"></a>HBOS算法</h2><p>Histogram-based Outlier Score，简称为HBOS，基于直方图的离群值，是基于多维数据不同维度的独立性假设，针对单个数据要做出直方图，对于categroy值，不仅要统计每个值出现的次数，还要计算相对频率。<br>主要有两种方法来分析数据特征：</p>
+<ul>
+<li>静态跨度柱状图<br>平分值域为K个等宽桶，落入每个桶值的频数作为密度，即桶的高度。</li>
+<li>动态宽度柱状图<br>排序所有数据值，将连续的N/k个值放入一个桶，柱状图的面积对应桶中的样例数。因为桶的宽度是有桶中第一个值和最后一个值决定的，所有桶的面积都一样，所以，每一个桶的高度可以被计算出来。这意味着跨度大的桶的高度低，即密度小，只有一种情况例外，超过k个数相等，此时一个桶里允许超过N/k个值。<br>按照上面的方法，每一个维度的数据都声称一个柱状图，每个桶的高度代表数据的密度，使用归一化操作保证桶最高的高度是1.这样可以保证每个特征的权重相同。最终每一个样本的HBOS值如下公式计算，其中HBOS分值越高，样本越异常。   </li>
+</ul>
+<p><img src="https://www.hualigs.cn/image/609e84826ae26.jpg" alt=""></p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
+<li><a href="https://econpapers.repec.org/article/eeeintfor/v_3a12_3ay_3a1996_3ai_3a1_3ap_3a175-176.htm" target="_blank" rel="noopener">Barnett V，Lewis T，Abeles F． Outliers in statistical data［M］． 3rd<br>ed． Chichester: Wiley，1994</a></li>
+<li><a href="https://www.cnki.com.cn/Article/CJFDTotal-JSYJ2020S1003.htm" target="_blank" rel="noopener">卓琳,等: 异常检测方法及其应用综述</a></li>
+<li><a href="https://gitee.com/datawhalechina/team-learning-data-mining/blob/master/AnomalyDetection/%E4%BA%8C%E3%80%81%E5%9F%BA%E4%BA%8E%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9A%84%E6%96%B9%E6%B3%95.md" target="_blank" rel="noopener">team-learning-data-mining-基于统计学的方法</a></li>
+<li><a href="http://www.ai-start.com/ml2014/html/week9.html" target="_blank" rel="noopener">机器学习笔记</a></li>
+</ol>
 
-基于统计学方法概述最早的基于统计学的异常检测，是由Barnett等人提出，他们基于数据服从某种分布（如正态分布、泊松分布及二项式分布）或概率模型，通过判断某个数据点是否符合预设分布/模型，即小概率事件的判别，来实现对异常的检测。基于该方法的异常检测是通过训练数据的标签来预设正常数据符合的概率分布或模型，将概率低的区域视为异常离群值。根据概率模型可分为：   
-
-参数方法由已知分布的数据来估计模型参数，如高斯模型，其中最简单的参数异常模型就是假设样本服从一...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "机器学习">机器学习</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "异常检测">异常检测</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/05/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B/" >
-            
-                <span>机器学习之异常检测</span>
-        </a>
-        <div class="abstract-content">
-            作者：Fu1cr4m说明：本文内容来自学习感悟以及网络整理，如有错误还请各位朋友批评指正！邮箱：Fu1cr4m@gmail.com
-
-
-异常检测异常检测通常指通过数据挖掘方式来识别与大部分对象不同的对象，不一定是不好的点。一般规定特定数据有”正常”模型，而偏差于正常模型的数据被判为异常，在实际应用中对异常的定义也是特定的。
-异常分类根据异常定义、数据类型与其他数据的关系，可将异常分为三类，即点异常、条件异常以及聚集异常，检测的步骤一般分为训练步和检测步。
-点异常
-将数据集中的每个数据都映射到高维空间中，其中孤立的点被称为点异常。这类点与其他数据点有着很明显的差异，这种异常分类是异常数据中...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "机器学习">机器学习</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "异常检测">异常检测</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2021/05/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B/" title= "机器学习之异常检测">
+                    <div class="prevTitle">机器学习之异常检测</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -456,6 +497,24 @@
     </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基于统计学方法"><span class="toc-number">1.</span> <span class="toc-text">基于统计学方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基于高斯分布的异常检测方法"><span class="toc-number">1.2.</span> <span class="toc-text">基于高斯分布的异常检测方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HBOS算法"><span class="toc-number">1.3.</span> <span class="toc-text">HBOS算法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考文献"><span class="toc-number">2.</span> <span class="toc-text">参考文献</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -601,6 +660,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
