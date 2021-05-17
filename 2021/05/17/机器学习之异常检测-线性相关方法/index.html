@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Fu1cr4m&#39;s Blog</title>
+    <title>机器学习之异常检测——线性相关方法 · Fu1cr4m&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 <meta name="generator" content="Hexo 4.2.0"></head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Fu1cr4m&#39;s Blog</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">机器学习之异常检测——线性相关方法</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Fu1cr4m's Blog</a>
 </header>
@@ -220,24 +231,76 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            机器学习之异常检测——线性相关方法
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "机器学习">机器学习</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "异常检测">异常检测</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.1k</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2021/05/17</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,117 +401,48 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/05/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B-%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95/" >
-            
-                <span>机器学习之异常检测——线性相关方法</span>
-        </a>
-        <div class="abstract-content">
-            作者：Fu1cr4m说明：本文内容来自学习感悟以及网络整理，如有错误还请各位朋友批评指正！邮箱：Fu1cr4m@gmail.com
+            <main class="main post-page">
+    <article class="article-entry">
+        <blockquote><p>作者：Fu1cr4m<br>说明：本文内容来自学习感悟以及网络整理，如有错误还请各位朋友批评指正！<br>邮箱：<a href="mailto:Fu1cr4m@gmail.com">Fu1cr4m@gmail.com</a></p>
+</blockquote>
 
+<h1 id="线性模型"><a href="#线性模型" class="headerlink" title="线性模型"></a>线性模型</h1><h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><p>线性回归（Linear Regression）是一种通过拟合自变量与因变量之间最佳线性关系，来预测目标变量的方法。回归过程是给出一个样本集，用函数拟合这个样本集，使样本集与拟合函数间的误差最小。生物统计学家高尔顿研究父母和子女身高的关系时发现：即使父母的身高都“极端”高，其子女不见得会比父母高，而是有“衰退”（Regression）至平均身高的倾向。具体地说，回归分析包括以下内容：<br>（1）确定输入变量与目标变量间的回归模型，即变量间相关关系的数学表达式。<br>（2）根据样本估计并检验回归模型及未知参数。<br>（3）从众多的输入变量中，判断哪些变量对目标变量的影响是显著的。<br>（4）根据输入变量的已知值来估计目标变量的平均值并给出预测精度。<br>线性回归的类型包括简单线性回归和多元线性回归。简单线性回归使用一个自变量，通过拟合最佳线性关系来预测因变量。多元线性回归使用多个独立变量，通过拟合最佳线性关系来预测因变量。其中通过统计学中的R²（Coefficient of Determination），也称为判定系数、拟合优度、决定系数等，来判断回归方程的拟合程度。当R²为1时表示回归方程可以完全解释因变量的变化。如果R²很低时，说明因变量和目标变量之间可能并不存在线性关系。调整R²是指对R²进行修正后的值，对非显著性变量给出惩罚，它没有R²的统计学意义，与实际样本的数值无关，与R²相比，其误差较少，是回归分析中重要的评价指标，其值越大说明模型效果越好。   </p>
+<h2 id="主成分分析"><a href="#主成分分析" class="headerlink" title="主成分分析"></a>主成分分析</h2><p>主成分分析（Principal Component Analysis，PCA）是最常用的线性降维方法，它的目标是通过某种线性投影，将高维的数据映射到低维的空间中，并期望在所投影的维度上数据的方差最大，以此使用较少的维度，同时保留较多原数据的维度。<br>主成分分析的降维是指经过正交变换后，形成新的特征集合，然后从中选择比较重要的一部分子特征集合，从而实现降维。这种方式并非是在原始特征中选择，所以PCA这种线性降维方式最大程度保留了原有的样本特征。<br>设有m条n维数据，PCA的一般步骤如下。<br>① 将原始数据按列组成n行m列矩阵X；<br>② 计算矩阵X中每个特征属性（n维）的平均向量M（平均值）；<br>③ 将X的每一行（代表一个属性字段）进行零均值化，即减去M；<br>④ 按照公式   <img src="https://www.hualigs.cn/image/60a25ce60dbeb.jpg" alt="">求出协方差矩阵；<br>⑤ 求出协方差矩阵的特征值及对应的特征向量；<br>⑥ 将特征向量按对应特征值从大到小按行排列成矩阵，取前k(k&lt;n)行组成基向量P；<br>⑦ 通过Y=PX计算降维到k维后的样本特征。<br>PCA算法目标是求出样本数据的协方差矩阵的特征值和特征向量，而协方差矩阵的特征向量的方向就是PCA需要投影的方向。使样本数据向低维投影后，能尽可能表征原始的数据。协方差矩阵可以用散布矩阵代替，协方差矩阵乘以(n-1)就是散布矩阵，n为样本的数量。协方差矩阵和散布矩阵都是对称矩阵，主对角线是各个随机变量（各个维度）的方差。<br>PCA的主要缺点是当数据量和数据维数非常大的时候，用协方差矩阵的方法解PCA会变得非常低效，解决办法是采用奇异值分解（Singular Value Decomposition，SVD）技术。</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
+<li><a href="https://www.icourse163.org/course/FUDAN-1205806833?tid=1206624259" target="_blank" rel="noopener">赵卫东，董亮编著 《机器学习》 及配套课程</a> </li>
+</ol>
 
-线性模型线性回归线性回归（Linear Regression）是一种通过拟合自变量与因变量之间最佳线性关系，来预测目标变量的方法。回归过程是给出一个样本集，用函数拟合这个样本集，使样本集与拟合函数间的误差最小。生物统计学家高尔顿研究父母和子女身高的关系时发现：即使父母的身高都“极端”高，其子女不见得会比父母高，而是有“衰退”（Regression）至平均身高的倾向。具体地说，回归分析包括以下内容：（1）确定输入变量与目标变量间的回归模型，即变量间相关关系...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "机器学习">机器学习</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "异常检测">异常检测</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/05/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B-%E5%9F%BA%E4%BA%8E%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%96%B9%E6%B3%95/" >
-            
-                <span>机器学习之异常检测--基于统计学方法</span>
-        </a>
-        <div class="abstract-content">
-            作者：Fu1cr4m说明：本文内容来自学习感悟以及网络整理，如有错误还请各位朋友批评指正！邮箱：Fu1cr4m@gmail.com
-
-
-基于统计学方法概述最早的基于统计学的异常检测，是由Barnett等人提出，他们基于数据服从某种分布（如正态分布、泊松分布及二项式分布）或概率模型，通过判断某个数据点是否符合预设分布/模型，即小概率事件的判别，来实现对异常的检测。基于该方法的异常检测是通过训练数据的标签来预设正常数据符合的概率分布或模型，将概率低的区域视为异常离群值。根据概率模型可分为：   
-
-参数方法由已知分布的数据来估计模型参数，如高斯模型，其中最简单的参数异常模型就是假设样本服从一...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "机器学习">机器学习</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "异常检测">异常检测</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/05/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B/" >
-            
-                <span>机器学习之异常检测</span>
-        </a>
-        <div class="abstract-content">
-            作者：Fu1cr4m说明：本文内容来自学习感悟以及网络整理，如有错误还请各位朋友批评指正！邮箱：Fu1cr4m@gmail.com
-
-
-异常检测异常检测通常指通过数据挖掘方式来识别与大部分对象不同的对象，不一定是不好的点。一般规定特定数据有”正常”模型，而偏差于正常模型的数据被判为异常，在实际应用中对异常的定义也是特定的。
-异常分类根据异常定义、数据类型与其他数据的关系，可将异常分为三类，即点异常、条件异常以及聚集异常，检测的步骤一般分为训练步和检测步。
-点异常
-将数据集中的每个数据都映射到高维空间中，其中孤立的点被称为点异常。这类点与其他数据点有着很明显的差异，这种异常分类是异常数据中...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "机器学习">机器学习</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "异常检测">异常检测</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2021/05/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B-%E5%9F%BA%E4%BA%8E%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%96%B9%E6%B3%95/" title= "机器学习之异常检测--基于统计学方法">
+                    <div class="prevTitle">机器学习之异常检测--基于统计学方法</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -490,6 +484,24 @@
     </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#线性模型"><span class="toc-number">1.</span> <span class="toc-text">线性模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#线性回归"><span class="toc-number">1.1.</span> <span class="toc-text">线性回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主成分分析"><span class="toc-number">1.2.</span> <span class="toc-text">主成分分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考文献"><span class="toc-number">2.</span> <span class="toc-text">参考文献</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -647,6 +659,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
