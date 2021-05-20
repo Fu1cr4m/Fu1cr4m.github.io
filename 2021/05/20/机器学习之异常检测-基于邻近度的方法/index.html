@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Fu1cr4m&#39;s Blog</title>
+    <title>机器学习之异常检测-基于邻近度的方法 · Fu1cr4m&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 <meta name="generator" content="Hexo 4.2.0"></head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Fu1cr4m&#39;s Blog</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">机器学习之异常检测-基于邻近度的方法</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Fu1cr4m's Blog</a>
 </header>
@@ -220,24 +231,76 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            机器学习之异常检测-基于邻近度的方法
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "机器学习">机器学习</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "异常检测">异常检测</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1k</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2021/05/20</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,152 +401,49 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/05/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B-%E5%9F%BA%E4%BA%8E%E9%82%BB%E8%BF%91%E5%BA%A6%E7%9A%84%E6%96%B9%E6%B3%95/" >
-            
-                <span>机器学习之异常检测-基于邻近度的方法</span>
-        </a>
-        <div class="abstract-content">
-            作者：Fu1cr4m说明：本文内容来自学习感悟以及网络整理，如有错误还请各位朋友批评指正！邮箱：Fu1cr4m@gmail.com
+            <main class="main post-page">
+    <article class="article-entry">
+        <blockquote><p>作者：Fu1cr4m<br>说明：本文内容来自学习感悟以及网络整理，如有错误还请各位朋友批评指正！<br>邮箱：<a href="mailto:Fu1cr4m@gmail.com">Fu1cr4m@gmail.com</a></p>
+</blockquote>
 
+<h1 id="基于邻近度的检测方法"><a href="#基于邻近度的检测方法" class="headerlink" title="基于邻近度的检测方法"></a>基于邻近度的检测方法</h1><p>根据离群点的识别方法和度量指标的不同，基于邻近度的异常检测方法可以分为基于距离法和基于密度法。</p>
+<h2 id="基于距离的方法"><a href="#基于距离的方法" class="headerlink" title="基于距离的方法"></a>基于距离的方法</h2><p>基于距离的方法于 1998 年提出，通过计算比较数据与近邻数据集合的距离来检测异常数据，是最常用的异常检测方法之一。其基本思想是正常数据点与其近邻数据相似，而异常数据则有别于近邻数据。离群点通常被定义为 DB( p，D)，即某一数据点o，当数据集T中至少有 p% 的数据与o距离大于D(图1) 。距离D的常见度量方法有欧几里德距离( Euclidean distance) 、曼哈顿距离( Manhattan distance) 、明可夫斯基距离( Minkowski distance) 和马哈拉诺比斯距离( Mahalanobis distance) 四种。其中欧几里德距离是最常用的距离度量指标。传统的基于距离方法可分为三种基本类型:<br>a) 基于索引( index-based) ，通过使用空间索引结构计算距离范围查询异常点;<br>b) 嵌套循环( nested-loop based) ，对空间进行两等分的划分，通过比较两者检测离群数据;<br>c) 基于网格( grid-based) ，通过构建网格比较相邻网格中的数据。<br>Ramasmamy 等人提出了K-最近邻(K-nearestneighbor，KNN) 异常检测方法，计算数据与之最近的第 k 个数据之间的距离，降序排序前 m 的数据对象将被标记为异常点。KNN法中同样也可利用上述三种算法类型进行异常值评分。<br>异常值评分法还包括线性化法( linearization)、ORCA法、RBRP法等。<br>基于距离的方法无须掌握数据分布，也不需要有标签的训练集，理论上适用于高维数据的异常检测。但由于其计算复杂度高，难以确定参数p和D，其应用也受到了一定的限制。针对上述缺陷，Fan等人提出了适用于工程学的基于像素(resolution-based，RB)的异常检测方法，无须确定参数p和D，就可以对任意类型检测排序前n的异常数据</p>
+<h2 id="基于密度的方法"><a href="#基于密度的方法" class="headerlink" title="基于密度的方法"></a>基于密度的方法</h2><p>该方法通过计算数据集中各数据区域的密度，将密度较低区域作为离群区域。基于局部离群因子( local outlier factor，LOF) 是其中一个经典的方法。LOF法与传统异常点非彼即此定义不同，将异常点定义局域是异常点，为每个数据赋值一个代表相对于其邻域的LOF值，LOF越大，说明其邻域密度较低，越有可能是异常点。但在LOF中难以确定最小近邻域，且随着数据维度的升高，计算复杂度和时间复杂度增加。不同密度条件异常示意图如图2所示。近年来学者通过对 LOF 进行扩展，提出了若干新颖的异常检测方法，包括局部相关积分(local correlation integral method,LOCI)法、局部距离因子( local distance-based outlier factor,LDOF) 法、局部异常概率(local outlier pobabilities,LoOP) 法、基于连接的离群因子( connectivity-based outlier factor，COF) 法等。Jin 等人先后提出了可以检测出前 n 个 LOF 值数据点的方法和针对不同密度数据并未完全区分开情况下的 INFLO( influenced out-lierness) 法。此外，还提出了基于入度的异常点(outlier detection using in-degree number,ODIN)、局部稀疏系数( local sparsity coef-ficient,LSC)、基于相邻关系的离群系数( neighborhood-based outlier factor，NOF)、概率后缀树( probabilistic suffix trees，PST)等度量指标的异常检测方法。</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
+<li><a href="https://www.cnki.com.cn/Article/CJFDTotal-JSYJ2020S1003.htm" target="_blank" rel="noopener">卓琳,等: 异常检测方法及其应用综述</a></li>
+</ol>
 
-基于邻近度的检测方法根据离群点的识别方法和度量指标的不同，基于邻近度的异常检测方法可以分为基于距离法和基于密度法。
-基于距离的方法基于距离的方法于 1998 年提出，通过计算比较数据与近邻数据集合的距离来检测异常数据，是最常用的异常检测方法之一。其基本思想是正常数据点与其近邻数据相似，而异常数据则有别于近邻数据。离群点通常被定义为 DB( p，D)，即某一数据点o，当数据集T中至少有 p% 的数据与o距离大于D(图1) 。距离D的常见度量方法有欧几里德距...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "机器学习">机器学习</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "异常检测">异常检测</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/05/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B-%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95/" >
-            
-                <span>机器学习之异常检测——线性相关方法</span>
-        </a>
-        <div class="abstract-content">
-            作者：Fu1cr4m说明：本文内容来自学习感悟以及网络整理，如有错误还请各位朋友批评指正！邮箱：Fu1cr4m@gmail.com
-
-
-线性模型线性回归线性回归（Linear Regression）是一种通过拟合自变量与因变量之间最佳线性关系，来预测目标变量的方法。回归过程是给出一个样本集，用函数拟合这个样本集，使样本集与拟合函数间的误差最小。生物统计学家高尔顿研究父母和子女身高的关系时发现：即使父母的身高都“极端”高，其子女不见得会比父母高，而是有“衰退”（Regression）至平均身高的倾向。具体地说，回归分析包括以下内容：（1）确定输入变量与目标变量间的回归模型，即变量间相关关系...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "机器学习">机器学习</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "异常检测">异常检测</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/05/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B-%E5%9F%BA%E4%BA%8E%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%96%B9%E6%B3%95/" >
-            
-                <span>机器学习之异常检测--基于统计学方法</span>
-        </a>
-        <div class="abstract-content">
-            作者：Fu1cr4m说明：本文内容来自学习感悟以及网络整理，如有错误还请各位朋友批评指正！邮箱：Fu1cr4m@gmail.com
-
-
-基于统计学方法概述最早的基于统计学的异常检测，是由Barnett等人提出，他们基于数据服从某种分布（如正态分布、泊松分布及二项式分布）或概率模型，通过判断某个数据点是否符合预设分布/模型，即小概率事件的判别，来实现对异常的检测。基于该方法的异常检测是通过训练数据的标签来预设正常数据符合的概率分布或模型，将概率低的区域视为异常离群值。根据概率模型可分为：   
-
-参数方法由已知分布的数据来估计模型参数，如高斯模型，其中最简单的参数异常模型就是假设样本服从一...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "机器学习">机器学习</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "异常检测">异常检测</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/05/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B/" >
-            
-                <span>机器学习之异常检测</span>
-        </a>
-        <div class="abstract-content">
-            作者：Fu1cr4m说明：本文内容来自学习感悟以及网络整理，如有错误还请各位朋友批评指正！邮箱：Fu1cr4m@gmail.com
-
-
-异常检测异常检测通常指通过数据挖掘方式来识别与大部分对象不同的对象，不一定是不好的点。一般规定特定数据有”正常”模型，而偏差于正常模型的数据被判为异常，在实际应用中对异常的定义也是特定的。
-异常分类根据异常定义、数据类型与其他数据的关系，可将异常分为三类，即点异常、条件异常以及聚集异常，检测的步骤一般分为训练步和检测步。
-点异常
-将数据集中的每个数据都映射到高维空间中，其中孤立的点被称为点异常。这类点与其他数据点有着很明显的差异，这种异常分类是异常数据中...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "机器学习">机器学习</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "异常检测">异常检测</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2021/05/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B-%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95/" title= "机器学习之异常检测——线性相关方法">
+                    <div class="prevTitle">机器学习之异常检测——线性相关方法</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -525,6 +485,24 @@
     </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基于邻近度的检测方法"><span class="toc-number">1.</span> <span class="toc-text">基于邻近度的检测方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基于距离的方法"><span class="toc-number">1.1.</span> <span class="toc-text">基于距离的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基于密度的方法"><span class="toc-number">1.2.</span> <span class="toc-text">基于密度的方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考文献"><span class="toc-number">2.</span> <span class="toc-text">参考文献</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -694,6 +672,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
