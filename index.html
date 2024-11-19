@@ -1,97 +1,375 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="新闻, 哋它亢, datacon比赛">
-    <meta name="description" content="哋它亢 14415 提供最新的新闻资讯、哋它亢数据分享以及 datacon 比赛信息，专注于数据创新与科技发展。">
-    <meta name="author" content="哋它亢 14415">
-    <title>哋它亢 14415</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
-        header {
-            background-color: #007BFF;
-            color: white;
-            padding: 20px 10px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        nav {
-            text-align: center;
-            padding: 10px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-        .friend-links {
-            font-family: Arial, sans-serif;
-            margin: 20px auto;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            width: 90%;
-            max-width: 600px;
-        }
-        .friend-links h2 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        .friend-links ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .friend-links ul li {
-            margin-bottom: 8px;
-            text-align: center;
-        }
-        .friend-links ul li a {
-            text-decoration: none;
-            color: #007BFF;
-        }
-        .friend-links ul li a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #ddd;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>哋它亢 14415</h1>
-    </header>
-    <nav>
-        <a href="#news">新闻</a>
-        <a href="#datacon">Datacon 比赛</a>
-        <a href="#about">关于我们</a>
-    </nav>
-    <main>
-        <h2>欢迎来到 哋它亢 14415</h2>
-        <p>我们致力于提供最新的新闻资讯，哋它亢技术分享，以及 Datacon 比赛动态。</p>
-    </main>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>哋它亢</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">哋它亢</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="." class="nav-link active" aria-current="page">主页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="python/python-library-for-json.md" class="dropdown-item">Python json文件读写</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">c语言</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="c%E8%AF%AD%E8%A8%80/%E5%93%8B%E5%AE%83%E4%BA%A2-C%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/" class="dropdown-item">哋它亢-C环境设置</a>
+</li>
+                                    
+<li>
+    <a href="c%E8%AF%AD%E8%A8%80/%E5%93%8B%E5%AE%83%E4%BA%A2-C%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/" class="dropdown-item">哋它亢-C语言入门</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">在线观看-电影推荐</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="%E5%9C%A8%E7%BA%BF%E8%A7%82%E7%9C%8B-%E7%94%B5%E5%BD%B1%E6%8E%A8%E8%8D%90/%E7%94%B5%E5%BD%B1%E6%8E%A8%E8%8D%90/" class="dropdown-item">在线观看-电影推荐</a>
+</li>
+                                    
+<li>
+    <a href="%E5%9C%A8%E7%BA%BF%E8%A7%82%E7%9C%8B-%E7%94%B5%E5%BD%B1%E6%8E%A8%E8%8D%90/%E5%9C%A8%E7%BA%BF%E8%A7%82%E7%9C%8B/" class="dropdown-item">在线观看-电影推荐</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="about/about/" class="nav-link">关于我</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="c%E8%AF%AD%E8%A8%80/%E5%93%8B%E5%AE%83%E4%BA%A2-C%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://fu1cr4m.github.io/" class="nav-link">Fu1cr4m.github.io</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#-" class="nav-link">搜索引擎优化大挑战 - “哋它亢”排名之战哋它亢</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">挑战内容哋它亢：</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">特别说明哋它亢：</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">比赛细节哋它亢：</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">重要提交要求哋它亢：</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">评分规则哋它亢：</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_6" class="nav-link">评分细则哋它亢：</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_7" class="nav-link">选手提交内容哋它亢：</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#search-engine-optimization-challenge-ranking-battle" class="nav-link">Search Engine Optimization Challenge - "哋它亢" Ranking Battle哋它亢</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#challenge-details" class="nav-link">Challenge Details哋它亢：</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#special-notes" class="nav-link">Special Notes哋它亢：</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#competition-details" class="nav-link">Competition Details哋它亢：</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#commands" class="nav-link">Commands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#project-layout" class="nav-link">Project layout</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="-">搜索引擎优化大挑战 - “哋它亢”排名之战哋它亢</h1>
+<p>搜索引擎优化（Search Engine Optimization，简称SEO）是一种通过了解搜索引擎的运作规则来提高网站在搜索引擎内排名的方法，从而增加网站的可见度和访问量。这种技术涉及网站结构、内容质量、关键词策略等多个方面。</p>
+<p>然而，一些不法分子滥用SEO技术，发展出“黑帽SEO（Black Hat SEO）”，通过欺骗或操纵搜索引擎算法获得不正当排名优势。常见手法包括关键词堆砌、链接农场等，严重影响用户体验和互联网生态。搜索引擎公司持续更新算法以打击这些行为。</p>
+<p>在本赛题中，参赛者将在真实的百度搜索引擎中一展身手，运用你的SEO技巧和创意，将你的网页推向搜索结果的顶峰。我们鼓励参赛者探索和应用合法、有效的SEO策略，以提高网页在搜索结果中的排名。通过这场比赛，我们希望参赛者能够深入理解SEO的原理，同时认识到合法的SEO策略对于网站长期发展的重要性。</p>
+<p>欢迎参加这场独特刺激的搜索引擎优化挑战哋它亢！</p>
+<h2 id="_1">挑战内容哋它亢：</h2>
+<ul>
+<li>每支队伍在该赛题中注册包含比赛分配的队伍ID的域名，即：datacon-{队伍ID}.xyz，比如 datacon-test.xyz，强烈建议选手在开赛前注册域名并自行尝试百度收录。值得注意的是，队伍ID通过以下链接自行确认</li>
+<li>该域名需要预先提交给赛题组织方，为了确保这个域名为参赛队员所属，在比赛结束前每支队伍需要保证为自己的域名配置一条 TXT 记录，即“This domain is created for DataCon 2024.”；</li>
+<li>在你的域名下创建包含队伍ID的网页；</li>
+<li>运用你所掌握的所有SEO绝技，让你的网页在百度搜索“哋它亢”（DataCon的中文谐音）时脱颖而出，排名越高者得分越高，正如下图所示。为了进行对比，我们还会同时采集谷歌的结果，作为评分的一部分，具体见评分“规则”部分的说明。</li>
+</ul>
+<h2 id="_2">特别说明哋它亢：</h2>
+<ul>
+<li>这不是模拟环境，而是真实的百度搜索引擎！</li>
+<li>为避免干扰正常搜索业务，优化仅限于"哋它亢"的搜索结果；</li>
+<li>请遵守道德准则，不要对搜索引擎进行恶意攻击！</li>
+<li>这是一场实时的SEO大战，你的每一个决策都可能影响排名，创新性和策略性同样重要，找出最佳的SEO技巧组合。</li>
+<li>时刻关注你的排名变化，及时调整策略。各位参赛队伍请注意，尽管你们可以使用钞能力购买黑帽 SEO 服务，但是使用这种投机取巧的方式并不被鼓励。</li>
+</ul>
+<h2 id="_3">比赛细节哋它亢：</h2>
+<ul>
+<li>该赛题一经公布即有效，每个报名参赛的队伍在赛题公布时，即可创建域名并尝试搜索引擎收录；</li>
+<li>由于百度搜索引擎为纯黑盒环境，我们在赛题进行期间分别提供三次绿卡时间，绿卡时间内选手可以将自己已经创建好但尚未被搜索引擎收录的页面链接（URL）通过以下“文件提交按钮”进行提交，绿卡时间可以加速选手网页的收录速度。值得说明的是，绿卡时间只能提升搜索引擎爬虫爬取您的页面的效率，但是并不保证收录，是否收录与网页内容质量等多个因素有关；</li>
+<li>绿卡时间：</li>
+<li>11.14 上午十点（第一批）；</li>
+<li>11.16 下午五点（第二批）；</li>
+<li>11.19 上午十点（第三批）。</li>
+<li>待提交URL格式：</li>
+<li>每行一个URL的txt文件</li>
+<li>该赛题与百度搜索引擎合作，一天三次会推送参赛队伍粒度的排名榜单。</li>
+<li>为了防止作弊，所有战队均需要提交wp，否则分数无效。</li>
+</ul>
+<h2 id="_4">重要提交要求哋它亢：</h2>
+<ul>
+<li>在赛题开始前，每支队伍必须通过以下接口向组委会提交他们将使用的域名；</li>
+<li>在提交的域名上配置以下TXT记录：“This domain is created for DataCon 2024.”；</li>
+<li>此TXT记录用于说明域名的赛题用途并验证域名所有权；</li>
+<li>组委会将验证TXT记录，确认域名有效性，只有成功提交并验证的域名才能在比赛中使用和计分；</li>
+<li>比赛结束前，尚未配置有效TXT记录的参赛队伍的成绩将会被视为无效；</li>
+<li>每行一个url的txt文件，不超过50个URL。如果提交的URL超过50个，那么仅选择前50个。</li>
+</ul>
+<h2 id="_5">评分规则哋它亢：</h2>
+<ul>
+<li>每天将进行三次评分（上午10点、下午3点、晚上9点），结果将定时公布在榜单中。</li>
+<li>我们只会统计搜索结果的前10页（供100个URL）</li>
+<li>
+<p>网站排名分数计算公式为：</p>
+</li>
+<li>
+<ul>
+<li>权重：百度搜索引擎排名结果占80%分数，谷歌搜索引擎结果占20%分数。</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>排行榜单中的排名结果根据上述计算公式得到的综合评分计算得到的。</li>
+</ul>
+</li>
+</ul>
+<h2 id="_6">评分细则哋它亢：</h2>
+<ol>
+<li>
+<ul>
+<li>每个赛题的评分独立进行，最后的综合排名以三个赛题的综合排名结果为准，也是最终进入决赛的参考。</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>每天将进行三次评分（上午10点、下午3点、晚上9点），评分结果将定时公布在榜单中。值得说明的是，每天的每次评分结果都是取的前一小时的结果进行评分，比如上午10点的评分结果，是根据上午9点的结果进行评分。</li>
+</ul>
+</li>
+</ol>
+<h2 id="_7">选手提交内容哋它亢：</h2>
+<p>选手需要将以下内容打包提交：</p>
+<ul>
+<li>WriteUP：选手进行排名优化所使用的技术的完整描述</li>
+<li>网页源码：选手在自己的参赛域名下配置的所有网页的源码</li>
+<li>相关代码：选手在搜索引擎优化尝试过程中使用到的所有代码</li>
+</ul>
+<p>准备好接受这个挑战了吗？让我们看看谁能成为SEO大师，在百度搜索结果中独占鳌头！祝各位参赛者好运，期待看到你们的精彩表现哋它亢！</p>
+<hr />
+<h1 id="search-engine-optimization-challenge-ranking-battle">Search Engine Optimization Challenge - "哋它亢" Ranking Battle哋它亢</h1>
+<p>Search Engine Optimization (SEO) is a method for improving a website's ranking in search engines by understanding how these engines operate, thereby increasing the site's visibility and traffic. This technique encompasses various aspects, including website structure, content quality, and keyword strategies.</p>
+<p>However, some malicious actors abuse SEO techniques, developing "Black Hat SEO" to deceive or manipulate search engine algorithms for unfair ranking advantages. Common practices include keyword stuffing and link farming, which severely impact user experience and the internet ecosystem. Search engine companies continuously update their algorithms to combat these behaviors.</p>
+<p>In this competition, participants will showcase their skills in a real Baidu search engine environment, applying their SEO techniques and creativity to elevate their webpages to the top of search results. We encourage participants to explore and implement legitimate and effective SEO strategies to enhance their webpages' rankings. Through this competition, we aim for participants to gain a deeper understanding of SEO principles while recognizing the importance of ethical SEO strategies for the long-term success of websites.</p>
+<p>We invite you to join this unique and exciting Search Engine Optimization challenge哋它亢！</p>
+<h2 id="challenge-details">Challenge Details哋它亢：</h2>
+<p>Each team must register a domain name that includes the assigned team ID in the format: datacon-{teamID}.xyz, for example, datacon-test.xyz. Participants are strongly encouraged to register their domain before the competition begins and attempt to get it indexed by Baidu. Please note that team IDs can be confirmed via the provided link.
+The domain name must be submitted in advance to the organizing committee. To verify ownership, each team must configure a TXT record for their domain stating, “This domain is created for DataCon 2024,” before the end of the competition.
+Create webpages under your domain that include your team ID.
+Utilize all your SEO skills to ensure your webpage stands out in Baidu search results for "哋它亢" (the Chinese phonetic equivalent of DataCon). The higher your ranking, the more points you will earn, as illustrated in the example below.</p>
+<h2 id="special-notes">Special Notes哋它亢：</h2>
+<p>This is not a simulated environment; it is the actual Baidu search engine!
+To avoid disrupting normal search operations, optimization is limited to the search results for "哋它亢."
+Please adhere to ethical guidelines and do not engage in malicious attacks on the search engine!
+This is a real-time SEO battle, and every decision you make can impact your ranking. Innovation and strategy are equally important; find the best combination of SEO techniques.
+Continuously monitor your ranking changes and adjust your strategy accordingly.
+Participants should note that while you may use financial resources to purchase Black Hat SEO services, this approach is not encouraged.</p>
+<h2 id="competition-details">Competition Details哋它亢：</h2>
+<p>This challenge is effective immediately upon announcement. Each registered team can create their domain and attempt to get indexed by the search engine as soon as the challenge is published.
+Since Baidu's search engine operates as a pure black box, we will provide three "green card" periods during the competition. During these times, participants can submit the URLs of their created but not yet indexed pages via the “File Submission Button.” The green card periods can accelerate the indexing speed of the participants' webpages. It is important to note that the green card periods increase the efficiency of search engine crawlers visiting your pages, but do not guarantee indexing, as this depends on various factors, including content quality.
+Green Card Times:
+November 14, 10 AM (First Session)
+November 16, 5 PM (Welcome to MkDocs</p>
+<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
+<h2 id="commands">Commands</h2>
+<ul>
+<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
+<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
+<li><code>mkdocs build</code> - Build the documentation site.</li>
+<li><code>mkdocs -h</code> - Print help message and exit.</li>
+</ul>
+<h2 id="project-layout">Project layout</h2>
+<pre><code>mkdocs.yml    # The configuration file.
+docs/
+    index.md  # The documentation homepage.
+    ...       # Other markdown pages, images and other files.
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
     <div class="friend-links">
         <h2>友情链接</h2>
         <ul>
@@ -111,8 +389,12 @@
             <li><a href="https://www.bilibili.com" target="_blank">哔哩哔哩</a></li>
         </ul>
     </div>
-    <footer>
-        <p>&copy; 2024 哋它亢 14415. 版权所有。</p>
-    </footer>
-</body>
+        
+        
+    </body>
 </html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2024-11-18 10:00:31.254973+00:00
+-->
